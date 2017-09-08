@@ -8,6 +8,14 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue-Bold</string>
+        </array>
+        <array key="HelveticaNeueExtras.ttc">
+            <string>HelveticaNeue-CondensedBold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--CameraVC-->
         <scene sceneID="tne-QT-ifu">
@@ -16,12 +24,90 @@
                     <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fsd-9x-evx">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.52156862749999999" green="0.73725490199999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ws5-ng-YXJ" customClass="RoundedShadowImageView" customModule="IdVisual" customModuleProvider="target">
+                                <rect key="frame" x="275" y="507" width="80" height="140"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="3ta-11-ybg"/>
+                                    <constraint firstAttribute="height" constant="140" id="CME-hs-keU"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="opd-z9-FnC" customClass="RoundedShadowButton" customModule="IdVisual" customModuleProvider="target">
+                                <rect key="frame" x="20" y="614" width="104" height="33"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="104" id="K58-KM-9bF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" title=" FLASH OFF "/>
+                            </button>
+                            <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VI3-Ch-SEb" customClass="RoundedShadowView" customModule="IdVisual" customModuleProvider="target">
+                                <rect key="frame" x="20" y="30" width="335" height="60"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="LiP-hz-Zu5">
+                                        <rect key="frame" x="9" y="13" width="317" height="34"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The name of items scanned will appear here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bgZ-bH-gXj">
+                                                <rect key="frame" x="0.0" y="0.0" width="317" height="19"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="18"/>
+                                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CONFIDENCE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sLX-pz-Pcf">
+                                                <rect key="frame" x="118.5" y="19" width="80.5" height="15"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="15" id="l9i-lv-lSK"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="4BQ-ef-HzQ"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="d1N-KE-wO0"/>
+                                    <constraint firstItem="LiP-hz-Zu5" firstAttribute="centerY" secondItem="VI3-Ch-SEb" secondAttribute="centerY" id="nHP-ac-Qxx"/>
+                                    <constraint firstItem="LiP-hz-Zu5" firstAttribute="top" secondItem="VI3-Ch-SEb" secondAttribute="top" constant="13" id="nN7-dz-8Zu"/>
+                                    <constraint firstItem="LiP-hz-Zu5" firstAttribute="centerX" secondItem="VI3-Ch-SEb" secondAttribute="centerX" id="vpf-zF-t2n"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="VI3-Ch-SEb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="2hT-hz-TjB"/>
+                            <constraint firstItem="fsd-9x-evx" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="8lq-GH-zxa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="opd-z9-FnC" secondAttribute="bottom" constant="20" id="9xw-38-U7u"/>
+                            <constraint firstItem="fsd-9x-evx" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="CJ5-Kt-EzA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ws5-ng-YXJ" secondAttribute="bottom" constant="20" id="Clw-eC-y87"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VI3-Ch-SEb" secondAttribute="trailing" constant="20" id="D1B-tZ-OBX"/>
+                            <constraint firstItem="opd-z9-FnC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Mbi-Vr-rdZ"/>
+                            <constraint firstItem="fsd-9x-evx" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="WW8-5M-d1g"/>
+                            <constraint firstItem="fsd-9x-evx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="c2T-1k-gVu"/>
+                            <constraint firstItem="VI3-Ch-SEb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="dje-9c-faM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ws5-ng-YXJ" secondAttribute="trailing" constant="20" id="pW0-6E-5bv"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="cameraView" destination="fsd-9x-evx" id="xD3-6p-rdi"/>
+                        <outlet property="captureImageView" destination="Ws5-ng-YXJ" id="qS4-dH-OMX"/>
+                        <outlet property="confidenceLbl" destination="sLX-pz-Pcf" id="ZhV-rb-d9W"/>
+                        <outlet property="flashOffBtn" destination="opd-z9-FnC" id="N7B-Jq-0Oa"/>
+                        <outlet property="idLabel" destination="bgZ-bH-gXj" id="b9d-ce-ZtV"/>
+                        <outlet property="roundedLblView" destination="VI3-Ch-SEb" id="9T9-jI-2n4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="116" y="123.68815592203899"/>
         </scene>
     </scenes>
 </document>
