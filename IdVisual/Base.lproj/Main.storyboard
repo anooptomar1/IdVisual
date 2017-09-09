@@ -45,6 +45,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                 <state key="normal" title=" FLASH OFF "/>
+                                <connections>
+                                    <action selector="flashBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p4M-SS-Bgy"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VI3-Ch-SEb" customClass="RoundedShadowView" customModule="IdVisual" customModuleProvider="target">
                                 <rect key="frame" x="20" y="30" width="335" height="60"/>
