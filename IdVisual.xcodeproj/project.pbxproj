@@ -15,7 +15,7 @@
 		45DC96401F62C23C004D6712 /* RoundedShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC963F1F62C23C004D6712 /* RoundedShadowView.swift */; };
 		45DC96421F62C360004D6712 /* RoundedShadowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC96411F62C360004D6712 /* RoundedShadowButton.swift */; };
 		45DC96441F62C3B7004D6712 /* RoundedShadowImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC96431F62C3B7004D6712 /* RoundedShadowImageView.swift */; };
-		45DC96461F646D89004D6712 /* SqueezeNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 45DC96451F646D89004D6712 /* SqueezeNet.mlmodel */; };
+		45DC96481F656ACA004D6712 /* MobileNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 45DC96471F656ACA004D6712 /* MobileNet.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +29,7 @@
 		45DC963F1F62C23C004D6712 /* RoundedShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShadowView.swift; sourceTree = "<group>"; };
 		45DC96411F62C360004D6712 /* RoundedShadowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShadowButton.swift; sourceTree = "<group>"; };
 		45DC96431F62C3B7004D6712 /* RoundedShadowImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShadowImageView.swift; sourceTree = "<group>"; };
-		45DC96451F646D89004D6712 /* SqueezeNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SqueezeNet.mlmodel; sourceTree = "<group>"; };
+		45DC96471F656ACA004D6712 /* MobileNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = MobileNet.mlmodel; path = ../../../../../Downloads/MobileNet.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +95,7 @@
 		45DC963E1F62BDC4004D6712 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				45DC96451F646D89004D6712 /* SqueezeNet.mlmodel */,
+				45DC96471F656ACA004D6712 /* MobileNet.mlmodel */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -172,9 +172,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				45DC962D1F62BD9B004D6712 /* CameraVC.swift in Sources */,
-				45DC96461F646D89004D6712 /* SqueezeNet.mlmodel in Sources */,
 				45DC962B1F62BD9B004D6712 /* AppDelegate.swift in Sources */,
 				45DC96401F62C23C004D6712 /* RoundedShadowView.swift in Sources */,
+				45DC96481F656ACA004D6712 /* MobileNet.mlmodel in Sources */,
 				45DC96421F62C360004D6712 /* RoundedShadowButton.swift in Sources */,
 				45DC96441F62C3B7004D6712 /* RoundedShadowImageView.swift in Sources */,
 			);

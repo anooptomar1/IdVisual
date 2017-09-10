@@ -24,6 +24,7 @@ class CameraVC: UIViewController {
     
     var photoData: Data?
     var flash: FlashState = .off
+    var speechSynth = AVSpeechSynthesizer()
 
     @IBOutlet weak var cameraView: UIView!
     @IBOutlet weak var captureImageView: UIImageView!
@@ -34,6 +35,7 @@ class CameraVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        speechSynth.delegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -99,17 +101,30 @@ class CameraVC: UIViewController {
         cameraOutput.capturePhoto(with: settings, delegate: self)
     }
     
+    func synthesizeSpeech(fromString string: String) {
+        let utterance = AVSpeechUtterance(string: string)
+        utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+
+        speechSynth.speak(utterance)
+    }
+    
     func resultsMethod(request: VNRequest, error: Error?) {
         guard let results = request.results as? [VNClassificationObservation] else { return }
         
         for classification in results {
+            let unknownObjectMessage = "I'm not sure what this is. Please try again."
             if classification.confidence < 0.5 {
-                self.idLabel.text = "I'm not sure what this is. Please try again."
+                self.idLabel.text = unknownObjectMessage
+                synthesizeSpeech(fromString: unknownObjectMessage)
                 self.confidenceLbl.text = ""
                 break
             } else {
-                self.idLabel.text = classification.identifier
-                self.confidenceLbl.text = "CONFIDENCE: \(Int(classification.confidence * 100))%"
+                let identification = classification.identifier
+                let confidence = Int(classification.confidence * 100)
+                self.idLabel.text = identification
+                self.confidenceLbl.text = "CONFIDENCE: \(confidence)%"
+                let message = "I am \(confidence) percent sure that this is a \(identification)"
+                synthesizeSpeech(fromString: message)
                 break
             }
         }
@@ -124,7 +139,7 @@ extension CameraVC: AVCapturePhotoCaptureDelegate {
             photoData = photo.fileDataRepresentation()
             
             do {
-                let model = try VNCoreMLModel(for: SqueezeNet().model)
+                let model = try VNCoreMLModel(for: MobileNet().model)
                 let request = VNCoreMLRequest(model: model, completionHandler: resultsMethod)
                 let handler = VNImageRequestHandler(data: photoData!)
                 try handler.perform([request])
@@ -139,4 +154,8 @@ extension CameraVC: AVCapturePhotoCaptureDelegate {
     }
 }
 
+extension CameraVC: AVSpeechSynthesizerDelegate {
+    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
+    }
+}
 
